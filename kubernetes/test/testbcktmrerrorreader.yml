@@ -14,7 +14,7 @@ spec:
         image: testregistrocontenedores.azurecr.io/error_reader:1.0.0
         env:
           - name: SPRING_PROFILES_ACTIVE
-            value: prod
+            value: test
         resources:
           requests:
             cpu: 250m
