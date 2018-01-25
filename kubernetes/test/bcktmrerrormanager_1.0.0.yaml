@@ -12,6 +12,9 @@ spec:
       containers:
       - name: testbcktmrerrormanager
         image: testregistrocontenedores.azurecr.io/error_manager:1.0.0
+        env:
+          - name: SPRING_PROFILES_ACTIVE
+            value: test        
         resources:
           requests:
             cpu: 250m
