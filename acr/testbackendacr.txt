@@ -1,0 +1,51 @@
+
+
+az acr create --name testbackendacr --resource-group satrack-backend --sku Standard
+{
+  "adminUserEnabled": false,
+  "creationDate": "2018-01-25T23:23:27.589129+00:00",
+  "id": "/subscriptions/c9b95ada-6c01-4f73-891d-b19ba8375df4/resourceGroups/satrack-backend/providers/Microsoft.ContainerRegistry/registries/testbackendacr",
+  "location": "eastus",
+  "loginServer": "testbackendacr.azurecr.io",
+  "name": "testbackendacr",
+  "provisioningState": "Succeeded",
+  "resourceGroup": "satrack-backend",
+  "sku": {
+    "name": "Standard",
+    "tier": "Standard"
+  },
+  "status": null,
+  "storageAccount": null,
+  "tags": {},
+  "type": "Microsoft.ContainerRegistry/registries"
+}
+
+az acr update –-name testbackendacr --admin-enabled true 
+
+{
+  "adminUserEnabled": true,
+  "creationDate": "2018-01-25T23:23:27.589129+00:00",
+  "id": "/subscriptions/c9b95ada-6c01-4f73-891d-b19ba8375df4/resourceGroups/satrack-backend/providers/Microsoft.ContainerRegistry/registries/testbackendacr",
+  "location": "eastus",
+  "loginServer": "testbackendacr.azurecr.io",
+  "name": "testbackendacr",
+  "provisioningState": "Succeeded",
+  "resourceGroup": "satrack-backend",
+  "sku": {
+    "name": "Standard",
+    "tier": "Standard"
+  },
+  "status": null,
+  "storageAccount": null,
+  "tags": {},
+  "type": "Microsoft.ContainerRegistry/registries"
+}
+
+az ad sp create-for-rbac --role Owner --name testbckcontainerregister --password satrack123* --scopes /subscriptions/c9b95ada-6c01-4f73-891d-b19ba8375df4/resourceGroups/satrack-backend/providers/Microsoft.ContainerRegistry/registries/testbackendacr
+{
+  "appId": "306e44f9-c09c-4c87-87e5-6d1460610efd",
+  "displayName": "testbckcontainerregister",
+  "name": "http://testbckcontainerregister",
+  "password": "satrack123*",
+  "tenant": "539e1fb6-f174-4ea8-b095-e8c5ac63a406"
+}
