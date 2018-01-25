@@ -1,0 +1,21 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: testbcktmrerrormanager
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: testbcktmrerrormanager
+    spec:
+      containers:
+      - name: testbcktmrerrormanager
+        image: testregistrocontenedores.azurecr.io/error_manager:1.0.0
+        resources:
+          requests:
+            cpu: 250m
+          limits:
+            cpu: 500m		
+      imagePullSecrets:
+      - name: denkerskey
