@@ -1,0 +1,24 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: testbcktmrerrorreader
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: testbcktmrerrorreader
+    spec:
+      containers:
+      - name: testbcktmrerrorreader
+        image: testregistrocontenedores.azurecr.io/error_reader:1.0.0
+        env:
+          - name: SPRING_PROFILES_ACTIVE
+            value: test
+        resources:
+          requests:
+            cpu: 250m
+          limits:
+            cpu: 500m		
+      imagePullSecrets:
+      - name: denkerskey
