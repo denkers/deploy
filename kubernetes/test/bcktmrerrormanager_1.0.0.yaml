@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
       - name: testbcktmrerrormanager
-        image: testregistrocontenedores.azurecr.io/error_manager:1.0.0
+        image: testregistrocontenedores.azurecr.io/error_reader:1.0.0
         env:
           - name: SPRING_PROFILES_ACTIVE
             value: test        
