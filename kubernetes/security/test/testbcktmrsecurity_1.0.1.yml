@@ -1,0 +1,24 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: testbcktmrsecurity
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: testbcktmrsecurity
+    spec:
+      containers:
+      - name: testbcktmrsecurity
+        image: testbackendacr.azurecr.io/security:1.0.1       
+        env:
+          - name: SPRING_PROFILES_ACTIVE
+            value: test
+        resources:
+          requests:
+            cpu: 250m
+          limits:
+            cpu: 500m		
+      imagePullSecrets:
+      - name: denkerskey
