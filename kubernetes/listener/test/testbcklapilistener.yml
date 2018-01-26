@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
       - name: testbcklapilistener
-        image: testregistrocontenedores.azurecr.io/listener:1.0.0
+        image: testbackendacr.azurecr.io/listener:1.0.0
         ports:
         - containerPort: 8089
         env:
