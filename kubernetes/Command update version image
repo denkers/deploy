@@ -1,0 +1,5 @@
+Command:
+kubectl set image deployments/{NameDeployment} {NameDeployment}={ACR/NameImage}:{Version}
+
+Example:
+kubectl set image deployments/security security=testbackendacr.azurecr.io/security:1.0.1
