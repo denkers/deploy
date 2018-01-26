@@ -1,16 +1,16 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: testbckltmrrouter
+  name: testbcktmrrouter
 spec:
   replicas: 3
   template:
     metadata:
       labels:
-        app: testbckltmrrouter
+        app: testbcktmrrouter
     spec:
       containers:
-      - name: testbckltmrrouter
+      - name: testbcktmrrouter
         image: testbackendacr.azurecr.io/activation:1.0.0        
         env:
           - name: SPRING_PROFILES_ACTIVE
