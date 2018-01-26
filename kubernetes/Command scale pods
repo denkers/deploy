@@ -1,0 +1,6 @@
+Command:
+kubectl scale deployments/{NameDeployment} --replicas={NumReplicas}
+
+Example
+
+kubectl scale deployments/testbcktmractivation --replicas=1
