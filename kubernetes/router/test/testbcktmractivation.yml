@@ -1,0 +1,24 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: testbckltmractivation
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: testbckltmractivation
+    spec:
+      containers:
+      - name: testbckltmractivation
+        image: testbackendacr.azurecr.io/activation:1.0.0        
+        env:
+          - name: SPRING_PROFILES_ACTIVE
+            value: test
+        resources:
+          requests:
+            cpu: 250m
+          limits:
+            cpu: 500m		
+      imagePullSecrets:
+      - name: denkerskey
