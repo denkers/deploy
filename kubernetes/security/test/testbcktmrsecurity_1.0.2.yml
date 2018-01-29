@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
       - name: testbcktmrsecurity
-        image: testbackendacr.azurecr.io/security:1.0.1       
+        image: testbackendacr.azurecr.io/security:1.0.2    
         env:
           - name: SPRING_PROFILES_ACTIVE
             value: test
