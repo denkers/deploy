@@ -1,16 +1,16 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: testbcklapilistener
+  name: testbcklapilistener01
 spec:
   replicas: 3
   template:
     metadata:
       labels:
-        app: testbcklapilistener
+        app: testbcklapilistener01
     spec:
       containers:
-      - name: testbcklapilistener
+      - name: testbcklapilistener01
         image: testbackendacr.azurecr.io/listener:1.0.0
         ports:
         - containerPort: 80
@@ -29,10 +29,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: testbcklapilistener
+  name: testbcklapilistener01
 spec:
   type: LoadBalancer
   ports:
   - port: 80
   selector:
-    app: testbcklapilistener
+    app: testbcklapilistener01
