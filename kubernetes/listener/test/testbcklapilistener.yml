@@ -13,7 +13,7 @@ spec:
       - name: testbcklapilistener
         image: testbackendacr.azurecr.io/listener:1.0.0
         ports:
-        - containerPort: 8089
+        - containerPort: 80
         env:
           - name: SPRING_PROFILES_ACTIVE
             value: test
@@ -33,6 +33,6 @@ metadata:
 spec:
   type: LoadBalancer
   ports:
-  - port: 8089
+  - port: 80
   selector:
     app: testbcklapilistener
