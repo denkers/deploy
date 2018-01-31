@@ -1,19 +1,19 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: testbcklapilistener01
+  name: testbcklapilistener
 spec:
   replicas: 3
   template:
     metadata:
       labels:
-        app: testbcklapilistener01
+        app: testbcklapilistener
     spec:
       containers:
-      - name: testbcklapilistener01
+      - name: testbcklapilistener
         image: testbackendacr.azurecr.io/listener:1.0.0
         ports:
-        - containerPort: 80
+        - containerPort: 8089
         env:
           - name: SPRING_PROFILES_ACTIVE
             value: test
@@ -29,10 +29,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: testbcklapilistener01
+  name: testbcklapilistener
 spec:
   type: LoadBalancer
   ports:
-  - port: 80
+  - port: 8089
   selector:
-    app: testbcklapilistener01
+    app: testbcklapilistener
