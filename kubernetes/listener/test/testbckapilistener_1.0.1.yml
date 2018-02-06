@@ -32,6 +32,7 @@ metadata:
   name: testbckapilistener
 spec:
   type: LoadBalancer
+  loadBalancerIP: 40.123.35.203
   ports:
   - port: 80
   selector:
