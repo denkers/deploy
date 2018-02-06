@@ -1,0 +1,1 @@
+kubectl create secret docker-registry {name} --docker-server={loginApp} --docker-username={username} --docker-password={pass} --docker-email={email}
