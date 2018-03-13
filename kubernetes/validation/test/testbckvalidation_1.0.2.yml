@@ -10,8 +10,8 @@ spec:
         app: testbckvalidation
     spec:
       containers:
-      - name: testbckvalidation
-        image: testbackendacr.azurecr.io/backend_validation:1.0.1
+      - name: testbckapilistener
+        image: testbackendacr.azurecr.io/backend_validate:1.0.1
         ports:
         - containerPort: 80
         env:
