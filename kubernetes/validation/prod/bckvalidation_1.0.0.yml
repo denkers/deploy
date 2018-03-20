@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: bckvalidation
 spec:
-  replicas: 3
+  replicas: 2
   template:
     metadata:
       labels:
@@ -16,7 +16,7 @@ spec:
         - containerPort: 80
         env:
           - name: SPRING_PROFILES_ACTIVE
-            value: test
+            value: prod
         resources:
           requests:
             cpu: 250m
