@@ -1,0 +1,24 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: testbckchangestatus
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: testbckchangestatus
+    spec:
+      containers:
+      - name: testbckchangestatus
+        image: testbackendacr.azurecr.io/backend_services_changestatus:1.0.0   
+        env:
+          - name: SPRING_PROFILES_ACTIVE
+            value: test
+        resources:
+          requests:
+            cpu: 250m
+          limits:
+            cpu: 500m		
+      imagePullSecrets:
+      - name: denkerskey
