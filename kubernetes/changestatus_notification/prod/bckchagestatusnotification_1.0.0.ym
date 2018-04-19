@@ -1,0 +1,26 @@
+
+
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: bckchagestatusnotification
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: bckchagestatusnotification
+    spec:
+      containers:
+      - name: bckchagestatusnotification
+        image: acrsatrack.azurecr.io/backend_changestatus_notification:1.0.0        
+        env:
+          - name: SPRING_PROFILES_ACTIVE
+            value: prod
+        resources:
+          requests:
+            cpu: 250m
+          limits:
+            cpu: 500m		
+      imagePullSecrets:
+      - name: denkerskey
