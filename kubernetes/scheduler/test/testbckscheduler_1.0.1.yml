@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
       - name: testbckscheduler
-        image: testbackendacr.azurecr.io/backend_scheduler:1.0.0        
+        image: testbackendacr.azurecr.io/backend_scheduler:1.0.1        
         env:
           - name: SPRING_PROFILES_ACTIVE
             value: test
