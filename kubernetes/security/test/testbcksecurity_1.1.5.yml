@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
       - name: testbcksecurity
-        image: testbackendacr.azurecr.io/backend_security:1.1.5
+        image: testbackendacr.azurecr.io/backend_security:1.1.6
         ports:
         - containerPort: 80
         env:
