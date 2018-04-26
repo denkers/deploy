@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: bckchagestatusnotification
-        image: acrsatrack.azurecr.io/backend_changestatus_notification:1.0.0        
+        image: acrsatrack.azurecr.io/backend_changestatus_notification:1.0.1      
         env:
           - name: SPRING_PROFILES_ACTIVE
             value: prod
