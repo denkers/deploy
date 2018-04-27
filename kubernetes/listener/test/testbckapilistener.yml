@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: testbckapilistener
 spec:
-  replicas: 3
+  replicas: 1
   template:
     metadata:
       labels:
@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
       - name: testbckapilistener
-        image: testbackendacr.azurecr.io/listener:1.1.0
+        image: testbackendacr.azurecr.io/backend_listener:1.1.0
         ports:
         - containerPort: 80
         env:
