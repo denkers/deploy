@@ -12,7 +12,7 @@ spec:
     spec:
       containers:
       - name: testbckchagestatusnotification
-        image: testbackendacr.azurecr.io/backend_changestatus_notification:1.0.1        
+        image: testbackendacr.azurecr.io/backend_changestatus_notification:1.1.0        
         env:
           - name: SPRING_PROFILES_ACTIVE
             value: test
