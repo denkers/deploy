@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
       - name: testbckapilistener
-        image: testbackendacr.azurecr.io/listener:1.2.0
+        image: testbackendacr.azurecr.io/backend_listener:1.2.0
         ports:
         - containerPort: 80
         env:
