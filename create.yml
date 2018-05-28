@@ -1,0 +1,32 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: backend_listener
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: backend_listener
+    spec:
+      containers:
+      - name: backend_listener
+        image: acrbmv28.azurecr.io/middleware-listener:latest
+        ports:
+        - containerPort: 6379
+    imagePullSecrets:
+     - name: keyacr
+     imagePullPolicy: Always
+ 	restartPolicy: Always
+
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend_listener
+spec:
+  ports:
+  - port: 6379
+  selector:
+    app: backend_listener
