@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: bckapilistenerkc
 spec:
-  replicas: 3
+  replicas: 1
   template:
     metadata:
       labels:
@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
       - name: bckapilistenerkc
-        image: acrsatrack.azurecr.io/backend_listener:1.2.0
+        image: backendacr.azurecr.io/backend_listener:1.2.1
         ports:
         - containerPort: 80
         env:
@@ -23,7 +23,7 @@ spec:
           limits:
             cpu: 500m		
       imagePullSecrets:
-      - name: registrosatrack
+      - name: denkerskey
       
 ---
 apiVersion: v1
