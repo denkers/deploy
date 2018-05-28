@@ -10,8 +10,8 @@ spec:
         app: testbckapilistenerkc
     spec:
       containers:
-      - name: testbckapilistener
-        image: testbackendacr.azurecr.io/backend_listener:1.2.0
+      - name: testbckapilistenerkc
+        image: testbackendacr.azurecr.io/backend_listener:1.2.1
         ports:
         - containerPort: 80
         env:
