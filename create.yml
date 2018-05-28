@@ -9,15 +9,15 @@ spec:
       labels:
         app: backend_listener
     spec:
+      imagePullSecrets:
+        - name: keyacr
       containers:
       - name: backend_listener
         image: acrbmv28.azurecr.io/middleware-listener:latest
         ports:
         - containerPort: 6379
-    imagePullSecrets:
-     - name: keyacr
-     imagePullPolicy: Always
- 	restartPolicy: Always
+        imagePullPolicy: Always
+        restartPolicy: Always
 
 
 ---
