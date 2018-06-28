@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: testbcktmrerrorreader
 spec:
-  replicas: 3
+  replicas: 1
   template:
     metadata:
       labels:
@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
       - name: testbcktmrerrorreader
-        image: testbackendacr.azurecr.io/error_reader:1.0.1        
+        image: testbackendacr.azurecr.io/backend_error_reader:1.0.4        
         env:
           - name: SPRING_PROFILES_ACTIVE
             value: test
