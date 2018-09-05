@@ -1,0 +1,21 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: rpttmrmigratorrt
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: rpttmrmigratorrt
+    spec:
+      containers:
+      - name: rpttmrmigratorrt
+        image: acrsatrack.azurecr.io/reports_migrator_realtime:1.0.0
+        resources:
+          requests:
+            cpu: 250m
+          limits:
+            cpu: 500m		
+      imagePullSecrets:
+      - name: registrosatrack
