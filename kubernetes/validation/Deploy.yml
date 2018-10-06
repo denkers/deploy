@@ -1,0 +1,19 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: remittanceentry
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: remittanceentry
+    spec:
+      containers:
+      - name: remittanceentry
+        image: devacrkratos.azurecr.io/rndc_remittanceentry:1831
+        env:
+          - name: SPRING_PROFILES_ACTIVE
+            value: test
+      imagePullSecrets:
+      - name: registrosatrack
