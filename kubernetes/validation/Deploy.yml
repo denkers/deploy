@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
       - name: remittanceentry
-        image: devacrkratos.azurecr.io/rndc_remittanceentry:1870
+        image: devacrkratos.azurecr.io/rndc_remittanceentry:1871
         env:
           - name: SPRING_PROFILES_ACTIVE
             value: test
