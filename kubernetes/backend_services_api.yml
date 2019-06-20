@@ -1,0 +1,42 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: backend-api-services
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: backend-api-services
+    spec:
+      containers:
+      - name: backend-api-services
+        image: acrsatrack.azurecr.io/backend-api-services:5046
+        imagePullPolicy: Always
+        env:
+          - name: ASPNETCORE_ENVIRONMENT
+            value: "Production"
+          - name: ASPNETCORE_URLS
+            value: "http://0.0.0.0:80"
+        resources:
+          requests:
+            cpu: 50m
+            memory: 100Mi
+          limits:
+            cpu: 200m
+            memory: 150Mi
+      imagePullSecrets:
+      - name: registrosatrack
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend-api-services
+  labels:
+    run: backend-api-services
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+  selector:
+    app: backend-api-services
