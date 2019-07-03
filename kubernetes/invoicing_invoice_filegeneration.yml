@@ -34,9 +34,6 @@ kind: Service
 metadata:
   name: invoicing-invoice-filegeneration
   namespace: invoicing
-  annotations:
-    service.beta.kubernetes.io/azure-load-balancer-internal: "true"
-    service.beta.kubernetes.io/azure-load-balancer-internal-subnet: "SubnetKuber"
   labels:
     run: invoicing-invoice-filegeneration
 spec:
