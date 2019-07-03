@@ -12,7 +12,7 @@ spec:
     spec:
       containers:
       - name: invoicing-invoice-filegeneration
-        image: testregistrocontenedores.azurecr.io/invoicing_invoice_filegeneration:7775
+        image: testregistrocontenedores.azurecr.io/invoicing_invoice_filegeneration:7776
         ports:
         - containerPort: 80
         env:
