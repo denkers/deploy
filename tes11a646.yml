@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
       - name: invoicing-invoice-filegeneration-v2
-        image: acrdenkers.azurecr.io/invoicing_invoice_filegeneration:4767
+        image: acrsatrack.azurecr.io/invoicing_invoice_filegeneration:4767
         ports:
         - containerPort: 80
       imagePullSecrets:
