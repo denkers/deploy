@@ -1,17 +1,17 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: invoicing-invoice-filegeneration
+  name: invoicing-invoice-filegeneration-v2
 spec:
   replicas: 4
   template:
     metadata:
       labels:
-        app: invoicing-invoice-filegeneration
+        app: invoicing-invoice-filegeneration-v2
     spec:
       containers:
-      - name: invoicing-invoice-filegeneration
-        image: acrdenkers.azurecr.io/invoicing_invoice_filegeneration:3162
+      - name: invoicing-invoice-filegeneration-v2
+        image: acrdenkers.azurecr.io/invoicing_invoice_filegeneration:4767
         ports:
         - containerPort: 80
       imagePullSecrets:
@@ -20,10 +20,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: invoicing-invoice-filegeneration
+  name: invoicing-invoice-filegeneration-v2
 spec:
   type: LoadBalancer
   ports:
   - port: 80
   selector:
-    app: invoicing-invoice-filegeneration
+    app: invoicing-invoice-filegeneration-v2
